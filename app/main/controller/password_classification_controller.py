@@ -16,7 +16,7 @@ class PasswordPrediction(Resource):
         return password_strength_predict(request.json)
 
 
-@api.route('/home')
+@api.route('/')
 class HomePage(Resource):
     def get(self):
         headers = {'Content-Type': 'text/html'}
