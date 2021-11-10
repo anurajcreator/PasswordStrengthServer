@@ -30,7 +30,13 @@ def password_strength_predict(data):
     try:
         
         password = data['password']
+            
+        if len(password) == 0:
+            return apiResponse(True, f'Enter a Password First', str(0), None), 200
         
+        if password in "01234567890":
+            return apiResponse(True, f'Password is Weak', str(0), None), 200
+             
         pred_dict, model = load_saved_artifacts()  
         
         x = vectorizer.transform([password])
