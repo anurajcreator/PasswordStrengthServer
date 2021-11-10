@@ -22,6 +22,36 @@
                     <label for="password" class="form-label">
                         <h1>Check your Password Strength</h1>
                     </label>
+                    <div class = 'mt-4'>
+                        {% if status == 500 %}
+                        <div class="alert alert-warning" role="alert">
+                            "Error Occured"
+                        </div>
+        
+                        {% elif message != '' %}
+                        {% if color == 'success' %}
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+        
+                        {% elif color == 'warning' %}
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+        
+                        {% elif color == 'danger' %}
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+        
+        
+                        {% endif %}
+        
+                        {% endif %}
+                    </div>
                     <input type="password" class="form-control" name='password' id="password"
                         placeholder="Enter Your Password">
                 </div>
@@ -33,36 +63,7 @@
                     Github
                 </a>
             </form>
-            <div class = 'mt-4'>
-                {% if status == 500 %}
-                <div class="alert alert-warning" role="alert">
-                    "Error Occured"
-                </div>
-
-                {% elif message != '' %}
-                {% if color == 'success' %}
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ message }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-
-                {% elif color == 'warning' %}
-                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    {{ message }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-
-                {% elif color == 'danger' %}
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    {{ message }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-
-
-                {% endif %}
-
-                {% endif %}
-            </div>
+            
         </div>
     </main>
 
